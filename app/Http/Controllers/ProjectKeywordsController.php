@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Keyword;
 use Illuminate\Http\Request;
 
 class ProjectKeywordsController extends Controller
@@ -35,6 +36,22 @@ class ProjectKeywordsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'keywords' => 'required'
+        ]);
+
+        $project_id = $request->input('project_id');
+        $keywords = explode(',', $request->input('keywords'));
+
+        foreach ($keywords as $keyword) {
+            // Create Keywords
+            $new_keyword = new Keyword;
+            $new_keyword->keyword_name = $keyword;
+            $new_keyword->project_id = $project_id;
+            $new_keyword->save();
+        }
+
+        return redirect('projects/'.$project_id);
     }
 
     /**
