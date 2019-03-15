@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// List Projects
+Route::get('projects', 'ProjectsController@index');
+
+// List Single Project
+Route::get('projects/{id}', 'ProjectsController@show');
+
+// Create new Keyword
+Route::post('keyword', 'ProjectKeywordsController@store');
