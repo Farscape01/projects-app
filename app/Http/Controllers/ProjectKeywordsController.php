@@ -35,7 +35,7 @@ class ProjectKeywordsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
         $this->validate($request, [
             'keywords' => 'required'
         ]);
