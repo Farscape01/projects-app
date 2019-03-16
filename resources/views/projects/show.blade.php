@@ -6,11 +6,11 @@
 
 @section('content')
     <!--content-->
-    <div class="content">
+    <div class="content mt-5">
         <div class="container">
             @isset($project)
                 <div>{{ $project->name }}</div>
-                <div>{{ $project->description }}</div>
+                <div class="mb-3">{{ $project->description }}</div>
             @endisset
             @isset($keywords)
                 @foreach($keywords as $keyword)
@@ -19,7 +19,7 @@
             @endisset
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModalLong">
                 Add Keyword
             </button>
 

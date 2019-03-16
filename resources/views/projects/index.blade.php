@@ -6,7 +6,7 @@
 
 @section('content')
     <!--content-->
-    <div class="content">
+    <div class="content mt-5">
         <div class="container">
             @isset($projects)
                 @foreach($projects as $project)
