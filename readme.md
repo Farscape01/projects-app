@@ -11,3 +11,5 @@ run `composer update`
 run `php artisan key:generate`
 
 Import the projectsapp.sql file, located in the _db folder, into your database.
+
+or run `php artisan migrate` and then populate the database manually with dummy projects in the projects table
